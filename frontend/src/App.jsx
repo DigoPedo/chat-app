@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import './App.css';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_BASE = import.meta.env.VITE_BACKEND_URL;
 const POLL_INTERVAL = 2000; // ms
 
 export default function App() {
+  console.log("Calling backend api", API_BASE);
   const [username, setUsername] = useState('');
   const [roomId, setRoomId] = useState('');
   const [joined, setJoined] = useState(false);
